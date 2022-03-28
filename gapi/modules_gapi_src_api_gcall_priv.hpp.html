@@ -1,0 +1,80 @@
+
+<html>
+<meta charset="utf-8" />
+<head>
+<title>gcall_priv.hpp</title>
+<link rel="icon" type="image/png" href="assets/favicon.ico"/>
+<link rel='stylesheet' type='text/css' href='assets/style.css'>
+<link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css'>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+<h1 class="filename-title">/home/ofek/src/opencv/modules/gapi/src/api/gcall_priv.hpp</h1>
+<h3>1 issue types:</h3>
+<ul id='entries_summary'>
+<li>inline: 3
+</ul>
+<p><a class='back' href='index.html'>Back</a></p>
+<table id="opt_table_code" class="" width="100%"></table>
+<p><a class='back' href='index.html'>Back</a></p>
+
+<script type="text/javascript">
+var dataSet = [["<a name=\"L1\">1</a>", "", "", "<div class=\"highlight\"><pre><span></span><span class=\"c1\">// This file is part of OpenCV project.</span></pre></div>", ""], ["<a name=\"L2\">2</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// It is subject to the license terms in the LICENSE file found in the top-level directory</span></pre></div>", ""], ["<a name=\"L3\">3</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// of this distribution and at http://opencv.org/license.html.</span></pre></div>", ""], ["<a name=\"L4\">4</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">//</span></pre></div>", ""], ["<a name=\"L5\">5</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// Copyright (C) 2018 Intel Corporation</span></pre></div>", ""], ["<a name=\"L6\">6</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""], ["<a name=\"L7\">7</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""], ["<a name=\"L8\">8</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cp\">#ifndef OPENCV_GCALL_PRIV_HPP</span></pre></div>", ""], ["<a name=\"L9\">9</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cp\">#define OPENCV_GCALL_PRIV_HPP</span></pre></div>", ""], ["<a name=\"L10\">10</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""], ["<a name=\"L11\">11</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cp\">#include</span> <span class=\"cpf\">&lt;vector&gt;</span><span class=\"cp\"></span></pre></div>", ""], ["<a name=\"L12\">12</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cp\">#include</span> <span class=\"cpf\">&lt;unordered_map&gt;</span><span class=\"cp\"></span></pre></div>", ""], ["<a name=\"L13\">13</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""], ["<a name=\"L14\">14</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cp\">#include</span> <span class=\"cpf\">&quot;opencv2/gapi/garg.hpp&quot;</span><span class=\"cp\"></span></pre></div>", ""], ["<a name=\"L15\">15</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cp\">#include</span> <span class=\"cpf\">&quot;opencv2/gapi/gcall.hpp&quot;</span><span class=\"cp\"></span></pre></div>", ""], ["<a name=\"L16\">16</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cp\">#include</span> <span class=\"cpf\">&quot;opencv2/gapi/gkernel.hpp&quot;</span><span class=\"cp\"></span></pre></div>", ""], ["<a name=\"L17\">17</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""], ["<a name=\"L18\">18</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cp\">#include</span> <span class=\"cpf\">&quot;api/gnode.hpp&quot;</span><span class=\"cp\"></span></pre></div>", ""], ["<a name=\"L19\">19</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""], ["<a name=\"L20\">20</a>", "", "", "<div class=\"highlight\"><pre><span class=\"k\">namespace</span> <span class=\"n\">cv</span> <span class=\"p\">{</span></pre></div>", ""], ["<a name=\"L21\">21</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""], ["<a name=\"L22\">22</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// GCall is used to capture details (arguments) passed to operation when the graph is</span></pre></div>", ""], ["<a name=\"L23\">23</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// constructed. It is, in fact, just a &quot;serialization&quot; of a function call (to some extent). The</span></pre></div>", ""], ["<a name=\"L24\">24</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// only place where new GCall objects are constructed is KernelName::on(). Note that GCall not</span></pre></div>", ""], ["<a name=\"L25\">25</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// only stores its input arguments, but also yields operation&#39;s pseudo-results to return</span></pre></div>", ""], ["<a name=\"L26\">26</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// &quot;results&quot;.</span></pre></div>", ""], ["<a name=\"L27\">27</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// GCall arguments are GArgs which can wrap either our special types (like GMat) or other</span></pre></div>", ""], ["<a name=\"L28\">28</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// stuff user may pass according to operation&#39;s signature (opaque to us).</span></pre></div>", ""], ["<a name=\"L29\">29</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// If a dynamic g-object is wrapped in GArg, it has origin - something where that object comes</span></pre></div>", ""], ["<a name=\"L30\">30</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// from. It is either another function call (again, a GCall) or nothing (for graph&#39;s starting</span></pre></div>", ""], ["<a name=\"L31\">31</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// points, for example). By using these links, we understand what the flow is and construct the</span></pre></div>", ""], ["<a name=\"L32\">32</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// real graph. Origin is a node in a graph, represented by GNode.</span></pre></div>", ""], ["<a name=\"L33\">33</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// When a GCall is created, it instantiates it&#39;s appropriate GNode since we need an origin for</span></pre></div>", ""], ["<a name=\"L34\">34</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// objects we produce with this call. This is what is stored in m_node and then is used in every</span></pre></div>", ""], ["<a name=\"L35\">35</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// yield() call (the framework calls yield() according to template signature which we strip then</span></pre></div>", ""], ["<a name=\"L36\">36</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// - aka type erasure).</span></pre></div>", ""], ["<a name=\"L37\">37</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// Here comes the recursion - GNode knows it is created for GCall, and GCall stores that node</span></pre></div>", ""], ["<a name=\"L38\">38</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// object as origin for yield(). In order to break it, in GNode&#39;s object destructor this m_node</span></pre></div>", ""], ["<a name=\"L39\">39</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// pointer is reset (note - GCall::Priv remains alive). Now GCall&#39;s ownership &quot;moves&quot; to GNode</span></pre></div>", ""], ["<a name=\"L40\">40</a>", "", "", "<div class=\"highlight\"><pre><span class=\"c1\">// and remains there until the API part is destroyed.</span></pre></div>", ""], ["<a name=\"L41\">41</a>", "", "", "<div class=\"highlight\"><pre><span class=\"k\">class</span> <span class=\"nc\">GCall</span><span class=\"o\">::</span><span class=\"n\">Priv</span></pre></div>", ""], ["", "", {"class": "column-entry-red", "text": "inline"}, {"class": "column-entry-yellow", "text": "<span style=\"margin-left: 2ch;\" class=\"indent-span\">&bull;  <a href=\"modules_gapi_include_opencv2_gapi_gkernel.hpp.html#L44\">cv::GKernel::~GKernel</a> not inlined into cv::GCall::Priv::~Priv because too costly to inline (cost=395, threshold=325)&nbsp;</span>"}, {"class": "column-entry-yellow", "text": "cv::GCall::Priv::~Priv"}], ["", "", {"class": "column-entry-red", "text": "inline"}, {"class": "column-entry-yellow", "text": "<span style=\"margin-left: 2ch;\" class=\"indent-span\">&bull;  <a href=\"modules_gapi_include_opencv2_gapi_gkernel.hpp.html#L44\">cv::GKernel::~GKernel</a> not inlined into std::__shared_count&lt;(__gnu_cxx::_Lock_policy)2&gt;::__shared_count&lt;cv::GCall::Priv*&gt; because too costly to inline (cost=395, threshold=325)&nbsp;</span>"}, {"class": "column-entry-yellow", "text": "std::__shared_count<(__gnu_cxx::_Lock_policy)2>::__shared_count<cv::GCall::Priv*>"}], ["", "", {"class": "column-entry-red", "text": "inline"}, {"class": "column-entry-yellow", "text": "<span style=\"margin-left: 2ch;\" class=\"indent-span\">&bull;  <a href=\"modules_gapi_include_opencv2_gapi_gkernel.hpp.html#L44\">cv::GKernel::~GKernel</a> not inlined into std::_Sp_counted_ptr&lt;cv::GCall::Priv*, (__gnu_cxx::_Lock_policy)2&gt;::_M_dispose because too costly to inline (cost=395, threshold=325)&nbsp;</span>"}, {"class": "column-entry-yellow", "text": "std::_Sp_counted_ptr<cv::GCall::Priv*, (__gnu_cxx::_Lock_policy)2>::_M_dispose"}], ["<a name=\"L42\">42</a>", "", "", "<div class=\"highlight\"><pre><span class=\"p\">{</span></pre></div>", ""], ["<a name=\"L43\">43</a>", "", "", "<div class=\"highlight\"><pre><span class=\"k\">public</span><span class=\"o\">:</span></pre></div>", ""], ["<a name=\"L44\">44</a>", "", "", "<div class=\"highlight\"><pre>    <span class=\"n\">std</span><span class=\"o\">::</span><span class=\"n\">vector</span><span class=\"o\">&lt;</span><span class=\"n\">GArg</span><span class=\"o\">&gt;</span> <span class=\"n\">m_args</span><span class=\"p\">;</span></pre></div>", ""], ["<a name=\"L45\">45</a>", "", "", "<div class=\"highlight\"><pre>    <span class=\"n\">GKernel</span>     <span class=\"n\">m_k</span><span class=\"p\">;</span></pre></div>", ""], ["<a name=\"L46\">46</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""], ["<a name=\"L47\">47</a>", "", "", "<div class=\"highlight\"><pre>    <span class=\"c1\">// TODO: Rename to &quot;constructionNode&quot; or smt to reflect its lifetime</span></pre></div>", ""], ["<a name=\"L48\">48</a>", "", "", "<div class=\"highlight\"><pre>    <span class=\"n\">GNode</span>             <span class=\"n\">m_node</span><span class=\"p\">;</span></pre></div>", ""], ["<a name=\"L49\">49</a>", "", "", "<div class=\"highlight\"><pre>    <span class=\"n\">cv</span><span class=\"o\">::</span><span class=\"n\">util</span><span class=\"o\">::</span><span class=\"n\">any</span>     <span class=\"n\">m_params</span><span class=\"p\">;</span></pre></div>", ""], ["<a name=\"L50\">50</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""], ["<a name=\"L51\">51</a>", "", "", "<div class=\"highlight\"><pre>    <span class=\"k\">explicit</span> <span class=\"nf\">Priv</span><span class=\"p\">(</span><span class=\"k\">const</span> <span class=\"n\">GKernel</span> <span class=\"o\">&amp;</span><span class=\"n\">k</span><span class=\"p\">);</span></pre></div>", ""], ["<a name=\"L52\">52</a>", "", "", "<div class=\"highlight\"><pre><span class=\"p\">};</span></pre></div>", ""], ["<a name=\"L53\">53</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""], ["<a name=\"L54\">54</a>", "", "", "<div class=\"highlight\"><pre><span class=\"p\">}</span></pre></div>", ""], ["<a name=\"L55\">55</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""], ["<a name=\"L56\">56</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cp\">#endif </span><span class=\"c1\">// OPENCV_GCALL_PRIV_HPP</span></pre></div>", ""], ["<a name=\"L57\">57</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""], ["<a name=\"L58\">58</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""]];
+
+function toggleExpandedMessage(e) {
+  var FullTextElems = e.parentElement.parentElement.getElementsByClassName("full-info");
+  if (!FullTextElems || FullTextElems.length < 1) {
+      return false;
+  }
+  var FullText = FullTextElems[0];
+  if (FullText.style.display == 'none') {
+    e.innerHTML = '-';
+    FullText.style.display = 'block';
+  } else {
+    e.innerHTML = '+';
+    FullText.style.display = 'none';
+  }
+}
+
+$(document).ready(function() {
+    $('#opt_table_code').DataTable( {
+        data: dataSet,
+        paging: false,
+        "ordering": false,
+        "asStripeClasses": [],
+        columns: [
+            { title: "Line" },
+            { title: "Hotness" },
+            { title: "Optimization" },
+            { title: "Source" },
+            { title: "Inline Context" }
+        ],
+        columnDefs: [
+            {
+                "targets": "_all",
+                "createdCell": function (td, data, rowData, row, col) {
+                    if (data.constructor == Object && data['class'] !== undefined) {
+                        $(td).addClass(data['class']);
+                    }
+                },
+                "render": function(data, type, row) {
+                    if (data.constructor == Object && data['text'] !== undefined) {
+                        return data['text'];
+                    }
+                    return data;
+                }
+            }
+        ]
+    } );
+    if (location.hash.length > 2) {
+        var loc = location.hash.split("#")[1];
+        var aTag = $("a[name='" + loc + "']");
+        if (aTag.length > 0) {
+            $('body').scrollTop(parseInt(aTag.offset().top));
+        }
+    }
+} );
+</script>
+</body>
+</html>

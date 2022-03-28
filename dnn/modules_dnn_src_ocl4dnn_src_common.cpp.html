@@ -1,0 +1,80 @@
+
+<html>
+<meta charset="utf-8" />
+<head>
+<title>common.cpp</title>
+<link rel="icon" type="image/png" href="assets/favicon.ico"/>
+<link rel='stylesheet' type='text/css' href='assets/style.css'>
+<link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css'>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+<h1 class="filename-title">/home/ofek/src/opencv/modules/dnn/src/ocl4dnn/src/common.cpp</h1>
+<h3>1 issue types:</h3>
+<ul id='entries_summary'>
+<li>inline: 5
+</ul>
+<p><a class='back' href='index.html'>Back</a></p>
+<table id="opt_table_code" class="" width="100%"></table>
+<p><a class='back' href='index.html'>Back</a></p>
+
+<script type="text/javascript">
+var dataSet = [["<a name=\"L1\">1</a>", "", "", "<div class=\"highlight\"><pre><span></span><span class=\"cm\">/*M///////////////////////////////////////////////////////////////////////////////////////</span></pre></div>", ""], ["<a name=\"L2\">2</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//</span></pre></div>", ""], ["<a name=\"L3\">3</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//  IMPORTANT: READ BEFORE DOWNLOADING, COPYING, INSTALLING OR USING.</span></pre></div>", ""], ["<a name=\"L4\">4</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//</span></pre></div>", ""], ["<a name=\"L5\">5</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//  By downloading, copying, installing or using the software you agree to this license.</span></pre></div>", ""], ["<a name=\"L6\">6</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//  If you do not agree to this license, do not download, install,</span></pre></div>", ""], ["<a name=\"L7\">7</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//  copy or use the software.</span></pre></div>", ""], ["<a name=\"L8\">8</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//</span></pre></div>", ""], ["<a name=\"L9\">9</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//</span></pre></div>", ""], ["<a name=\"L10\">10</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//                           License Agreement</span></pre></div>", ""], ["<a name=\"L11\">11</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//                For Open Source Computer Vision Library</span></pre></div>", ""], ["<a name=\"L12\">12</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//</span></pre></div>", ""], ["<a name=\"L13\">13</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">// Copyright (C) 2017, Intel Corporation, all rights reserved.</span></pre></div>", ""], ["<a name=\"L14\">14</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">// Copyright (c) 2016-2017 Fabian David Tschopp, all rights reserved.</span></pre></div>", ""], ["<a name=\"L15\">15</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">// Third party copyrights are property of their respective owners.</span></pre></div>", ""], ["<a name=\"L16\">16</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//</span></pre></div>", ""], ["<a name=\"L17\">17</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">// Redistribution and use in source and binary forms, with or without modification,</span></pre></div>", ""], ["<a name=\"L18\">18</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">// are permitted provided that the following conditions are met:</span></pre></div>", ""], ["<a name=\"L19\">19</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//</span></pre></div>", ""], ["<a name=\"L20\">20</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//   * Redistribution&#39;s of source code must retain the above copyright notice,</span></pre></div>", ""], ["<a name=\"L21\">21</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//     this list of conditions and the following disclaimer.</span></pre></div>", ""], ["<a name=\"L22\">22</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//</span></pre></div>", ""], ["<a name=\"L23\">23</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//   * Redistribution&#39;s in binary form must reproduce the above copyright notice,</span></pre></div>", ""], ["<a name=\"L24\">24</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//     this list of conditions and the following disclaimer in the documentation</span></pre></div>", ""], ["<a name=\"L25\">25</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//     and/or other materials provided with the distribution.</span></pre></div>", ""], ["<a name=\"L26\">26</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//</span></pre></div>", ""], ["<a name=\"L27\">27</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//   * The name of the copyright holders may not be used to endorse or promote products</span></pre></div>", ""], ["<a name=\"L28\">28</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//     derived from this software without specific prior written permission.</span></pre></div>", ""], ["<a name=\"L29\">29</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//</span></pre></div>", ""], ["<a name=\"L30\">30</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">// This software is provided by the copyright holders and contributors &quot;as is&quot; and</span></pre></div>", ""], ["<a name=\"L31\">31</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">// any express or implied warranties, including, but not limited to, the implied</span></pre></div>", ""], ["<a name=\"L32\">32</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">// warranties of merchantability and fitness for a particular purpose are disclaimed.</span></pre></div>", ""], ["<a name=\"L33\">33</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">// In no event shall the Intel Corporation or contributors be liable for any direct,</span></pre></div>", ""], ["<a name=\"L34\">34</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">// indirect, incidental, special, exemplary, or consequential damages</span></pre></div>", ""], ["<a name=\"L35\">35</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">// (including, but not limited to, procurement of substitute goods or services;</span></pre></div>", ""], ["<a name=\"L36\">36</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">// loss of use, data, or profits; or business interruption) however caused</span></pre></div>", ""], ["<a name=\"L37\">37</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">// and on any theory of liability, whether in contract, strict liability,</span></pre></div>", ""], ["<a name=\"L38\">38</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">// or tort (including negligence or otherwise) arising in any way out of</span></pre></div>", ""], ["<a name=\"L39\">39</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">// the use of this software, even if advised of the possibility of such damage.</span></pre></div>", ""], ["<a name=\"L40\">40</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//</span></pre></div>", ""], ["<a name=\"L41\">41</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cm\">//M*/</span></pre></div>", ""], ["<a name=\"L42\">42</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""], ["<a name=\"L43\">43</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cp\">#include</span> <span class=\"cpf\">&quot;../../precomp.hpp&quot;</span><span class=\"cp\"></span></pre></div>", ""], ["<a name=\"L44\">44</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cp\">#include</span> <span class=\"cpf\">&quot;../include/common.hpp&quot;</span><span class=\"cp\"></span></pre></div>", ""], ["<a name=\"L45\">45</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cp\">#include</span> <span class=\"cpf\">&quot;opencl_kernels_dnn.hpp&quot;</span><span class=\"cp\"></span></pre></div>", ""], ["<a name=\"L46\">46</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""], ["<a name=\"L47\">47</a>", "", "", "<div class=\"highlight\"><pre><span class=\"k\">using</span> <span class=\"k\">namespace</span> <span class=\"n\">cv</span><span class=\"p\">;</span></pre></div>", ""], ["<a name=\"L48\">48</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""], ["<a name=\"L49\">49</a>", "", "", "<div class=\"highlight\"><pre><span class=\"kt\">bool</span> <span class=\"nf\">clOptionSupport</span><span class=\"p\">(</span><span class=\"n\">cv</span><span class=\"o\">::</span><span class=\"n\">String</span> <span class=\"n\">option</span><span class=\"p\">)</span></pre></div>", ""], ["<a name=\"L50\">50</a>", "", "", "<div class=\"highlight\"><pre><span class=\"p\">{</span></pre></div>", ""], ["<a name=\"L51\">51</a>", "", "", "<div class=\"highlight\"><pre>    <span class=\"n\">cv</span><span class=\"o\">::</span><span class=\"n\">String</span> <span class=\"n\">errmsg</span><span class=\"p\">;</span></pre></div>", ""], ["<a name=\"L52\">52</a>", "", "", "<div class=\"highlight\"><pre>    <span class=\"n\">ocl</span><span class=\"o\">::</span><span class=\"n\">Program</span> <span class=\"n\">program</span> <span class=\"o\">=</span> <span class=\"n\">ocl</span><span class=\"o\">::</span><span class=\"n\">Context</span><span class=\"o\">::</span><span class=\"n\">getDefault</span><span class=\"p\">().</span><span class=\"n\">getProg</span><span class=\"p\">(</span><span class=\"n\">ocl</span><span class=\"o\">::</span><span class=\"n\">dnn</span><span class=\"o\">::</span><span class=\"n\">dummy_oclsrc</span><span class=\"p\">,</span> <span class=\"n\">option</span><span class=\"p\">,</span> <span class=\"n\">errmsg</span><span class=\"p\">);</span></pre></div>", ""], ["", "", {"class": "column-entry-red", "text": "inline"}, {"class": "column-entry-yellow", "text": "<span style=\"margin-left: 6ch;\" class=\"indent-span\">&bull;  cv::ocl::Context::getProg will not be inlined into clOptionSupport because its definition is unavailable&nbsp;</span>"}, {"class": "column-entry-yellow", "text": "clOptionSupport"}], ["", "", {"class": "column-entry-red", "text": "inline"}, {"class": "column-entry-yellow", "text": "<span style=\"margin-left: 6ch;\" class=\"indent-span\">&bull;  cv::ocl::internal::ProgramEntry::operator cv::ocl::ProgramSource&amp; will not be inlined into clOptionSupport because its definition is unavailable&nbsp;</span>"}, {"class": "column-entry-yellow", "text": "clOptionSupport"}], ["", "", {"class": "column-entry-red", "text": "inline"}, {"class": "column-entry-yellow", "text": "<span style=\"margin-left: 6ch;\" class=\"indent-span\">&bull;  cv::ocl::Context::getDefault will not be inlined into clOptionSupport because its definition is unavailable&nbsp;</span>"}, {"class": "column-entry-yellow", "text": "clOptionSupport"}], ["<a name=\"L53\">53</a>", "", "", "<div class=\"highlight\"><pre>    <span class=\"k\">return</span> <span class=\"n\">program</span><span class=\"p\">.</span><span class=\"n\">ptr</span><span class=\"p\">()</span> <span class=\"o\">?</span> <span class=\"nb\">true</span> <span class=\"o\">:</span> <span class=\"nb\">false</span><span class=\"p\">;</span></pre></div>", ""], ["", "", {"class": "column-entry-red", "text": "inline"}, {"class": "column-entry-yellow", "text": "<span style=\"margin-left: 6ch;\" class=\"indent-span\">&bull;  cv::ocl::Program::ptr will not be inlined into clOptionSupport because its definition is unavailable&nbsp;</span>"}, {"class": "column-entry-yellow", "text": "clOptionSupport"}], ["<a name=\"L54\">54</a>", "", "", "<div class=\"highlight\"><pre><span class=\"p\">}</span></pre></div>", ""], ["", "", {"class": "column-entry-red", "text": "inline"}, {"class": "column-entry-yellow", "text": "<span style=\"margin-left: 2ch;\" class=\"indent-span\">&bull;  cv::ocl::Program::~Program will not be inlined into clOptionSupport because its definition is unavailable&nbsp;</span>"}, {"class": "column-entry-yellow", "text": "clOptionSupport"}], ["<a name=\"L55\">55</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""], ["<a name=\"L56\">56</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""]];
+
+function toggleExpandedMessage(e) {
+  var FullTextElems = e.parentElement.parentElement.getElementsByClassName("full-info");
+  if (!FullTextElems || FullTextElems.length < 1) {
+      return false;
+  }
+  var FullText = FullTextElems[0];
+  if (FullText.style.display == 'none') {
+    e.innerHTML = '-';
+    FullText.style.display = 'block';
+  } else {
+    e.innerHTML = '+';
+    FullText.style.display = 'none';
+  }
+}
+
+$(document).ready(function() {
+    $('#opt_table_code').DataTable( {
+        data: dataSet,
+        paging: false,
+        "ordering": false,
+        "asStripeClasses": [],
+        columns: [
+            { title: "Line" },
+            { title: "Hotness" },
+            { title: "Optimization" },
+            { title: "Source" },
+            { title: "Inline Context" }
+        ],
+        columnDefs: [
+            {
+                "targets": "_all",
+                "createdCell": function (td, data, rowData, row, col) {
+                    if (data.constructor == Object && data['class'] !== undefined) {
+                        $(td).addClass(data['class']);
+                    }
+                },
+                "render": function(data, type, row) {
+                    if (data.constructor == Object && data['text'] !== undefined) {
+                        return data['text'];
+                    }
+                    return data;
+                }
+            }
+        ]
+    } );
+    if (location.hash.length > 2) {
+        var loc = location.hash.split("#")[1];
+        var aTag = $("a[name='" + loc + "']");
+        if (aTag.length > 0) {
+            $('body').scrollTop(parseInt(aTag.offset().top));
+        }
+    }
+} );
+</script>
+</body>
+</html>

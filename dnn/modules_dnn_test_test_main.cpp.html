@@ -1,0 +1,81 @@
+
+<html>
+<meta charset="utf-8" />
+<head>
+<title>test_main.cpp</title>
+<link rel="icon" type="image/png" href="assets/favicon.ico"/>
+<link rel='stylesheet' type='text/css' href='assets/style.css'>
+<link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css'>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+<h1 class="filename-title">/home/ofek/src/opencv/modules/dnn/test/test_main.cpp</h1>
+<h3>2 issue types:</h3>
+<ul id='entries_summary'>
+<li>gvn: 3
+<li>inline: 5
+</ul>
+<p><a class='back' href='index.html'>Back</a></p>
+<table id="opt_table_code" class="" width="100%"></table>
+<p><a class='back' href='index.html'>Back</a></p>
+
+<script type="text/javascript">
+var dataSet = [["<a name=\"L1\">1</a>", "", "", "<div class=\"highlight\"><pre><span></span><span class=\"cp\">#include</span> <span class=\"cpf\">&quot;test_precomp.hpp&quot;</span><span class=\"cp\"></span></pre></div>", ""], ["<a name=\"L2\">2</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""], ["<a name=\"L3\">3</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cp\">#if defined(HAVE_HPX)</span></pre></div>", ""], ["<a name=\"L4\">4</a>", "", "", "<div class=\"highlight\"><pre>    <span class=\"cp\">#include</span> <span class=\"cpf\">&lt;hpx/hpx_main.hpp&gt;</span><span class=\"cp\"></span></pre></div>", ""], ["<a name=\"L5\">5</a>", "", "", "<div class=\"highlight\"><pre><span class=\"cp\">#endif</span></pre></div>", ""], ["<a name=\"L6\">6</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""], ["<a name=\"L7\">7</a>", "", "", "<div class=\"highlight\"><pre><span class=\"n\">CV_TEST_MAIN</span><span class=\"p\">(</span><span class=\"s\">&quot;&quot;</span><span class=\"p\">,</span> <span class=\"n\">initDNNTests</span><span class=\"p\">());</span></pre></div>", ""], ["", "", {"class": "column-entry-red", "text": "gvn"}, {"class": "column-entry-yellow", "text": "<span style=\"margin-left: 2ch;\" class=\"indent-span\">&bull;  load of type i32 not eliminated in favor of store because it is clobbered by <a href=\"modules_dnn_test_test_main.cpp.html#L7\">invoke</a>&nbsp;</span>"}, {"class": "column-entry-yellow", "text": "main"}], ["", "", {"class": "column-entry-red", "text": "gvn"}, {"class": "column-entry-yellow", "text": "<span style=\"margin-left: 2ch;\" class=\"indent-span\">&bull;  load of type void (%\"class.cvtest::TS\"*, %\"class.std::__cxx11::basic_string\"*)** not eliminated because it is clobbered by <a href=\"modules_dnn_test_test_main.cpp.html#L7\">invoke</a>&nbsp;</span>"}, {"class": "column-entry-yellow", "text": "main"}], ["", "", {"class": "column-entry-red", "text": "inline"}, {"class": "column-entry-yellow", "text": "<span style=\"margin-left: 2ch;\" class=\"indent-span\">&bull;  testing::UnitTest::listeners will not be inlined into main because its definition is unavailable&nbsp;</span>"}, {"class": "column-entry-yellow", "text": "main"}], ["", "", {"class": "column-entry-red", "text": "inline"}, {"class": "column-entry-yellow", "text": "<span style=\"margin-left: 2ch;\" class=\"indent-span\">&bull;  opencv_test::initDNNTests will not be inlined into main because its definition is unavailable&nbsp;</span>"}, {"class": "column-entry-yellow", "text": "main"}], ["", "", {"class": "column-entry-red", "text": "inline"}, {"class": "column-entry-yellow", "text": "<span style=\"margin-left: 2ch;\" class=\"indent-span\">&bull;  testing::UnitTest::GetInstance will not be inlined into main because its definition is unavailable&nbsp;</span>"}, {"class": "column-entry-yellow", "text": "main"}], ["", "", {"class": "column-entry-red", "text": "inline"}, {"class": "column-entry-yellow", "text": "<span style=\"margin-left: 2ch;\" class=\"indent-span\">&bull;  testing::TestEventListeners::Append will not be inlined into main because its definition is unavailable&nbsp;</span>"}, {"class": "column-entry-yellow", "text": "main"}], ["", "", {"class": "column-entry-red", "text": "inline"}, {"class": "column-entry-yellow", "text": "<span style=\"margin-left: 2ch;\" class=\"indent-span\">&bull;  cv::utils::trace::details::Region::Region will not be inlined into main because its definition is unavailable&nbsp;</span>"}, {"class": "column-entry-yellow", "text": "main"}], ["", "", {"class": "column-entry-red", "text": "gvn"}, {"class": "column-entry-yellow", "text": "<span style=\"margin-left: 2ch;\" class=\"indent-span\">&bull;  load of type void (%\"class.cvtest::TS\"*, %\"class.std::__cxx11::basic_string\"*)* not eliminated because it is clobbered by <a href=\"_usr_bin_.._lib_gcc_x86_64-linux-gnu_10_.._.._.._.._include_c++_10_bits_char_traits.h.html#L329\">store</a>&nbsp;</span>"}, {"class": "column-entry-yellow", "text": "main"}], ["<a name=\"L8\">8</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""], ["<a name=\"L9\">9</a>", "", "", "<div class=\"highlight\"><pre></pre></div>", ""]];
+
+function toggleExpandedMessage(e) {
+  var FullTextElems = e.parentElement.parentElement.getElementsByClassName("full-info");
+  if (!FullTextElems || FullTextElems.length < 1) {
+      return false;
+  }
+  var FullText = FullTextElems[0];
+  if (FullText.style.display == 'none') {
+    e.innerHTML = '-';
+    FullText.style.display = 'block';
+  } else {
+    e.innerHTML = '+';
+    FullText.style.display = 'none';
+  }
+}
+
+$(document).ready(function() {
+    $('#opt_table_code').DataTable( {
+        data: dataSet,
+        paging: false,
+        "ordering": false,
+        "asStripeClasses": [],
+        columns: [
+            { title: "Line" },
+            { title: "Hotness" },
+            { title: "Optimization" },
+            { title: "Source" },
+            { title: "Inline Context" }
+        ],
+        columnDefs: [
+            {
+                "targets": "_all",
+                "createdCell": function (td, data, rowData, row, col) {
+                    if (data.constructor == Object && data['class'] !== undefined) {
+                        $(td).addClass(data['class']);
+                    }
+                },
+                "render": function(data, type, row) {
+                    if (data.constructor == Object && data['text'] !== undefined) {
+                        return data['text'];
+                    }
+                    return data;
+                }
+            }
+        ]
+    } );
+    if (location.hash.length > 2) {
+        var loc = location.hash.split("#")[1];
+        var aTag = $("a[name='" + loc + "']");
+        if (aTag.length > 0) {
+            $('body').scrollTop(parseInt(aTag.offset().top));
+        }
+    }
+} );
+</script>
+</body>
+</html>
