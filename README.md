@@ -28,19 +28,19 @@ OpenCV is a large project, so to avoid overburdening both the generation script 
 
 Links to the separate folder index.html as github-pages:
 
-- https://ofekshilon.github.io/optview2-opencv/calib3d/
-- https://ofekshilon.github.io/optview2-opencv/core/
-- https://ofekshilon.github.io/optview2-opencv/dnn/
-- https://ofekshilon.github.io/optview2-opencv/features2d/
-- https://ofekshilon.github.io/optview2-opencv/flann/
-- https://ofekshilon.github.io/optview2-opencv/gapi/
-- https://ofekshilon.github.io/optview2-opencv/highgui/
-- https://ofekshilon.github.io/optview2-opencv/imgcodecs/
-- https://ofekshilon.github.io/optview2-opencv/imgproc/
-- https://ofekshilon.github.io/optview2-opencv/ml/
-- https://ofekshilon.github.io/optview2-opencv/objdetect/
-- https://ofekshilon.github.io/optview2-opencv/photo/
-- https://ofekshilon.github.io/optview2-opencv/stitching/
-- https://ofekshilon.github.io/optview2-opencv/ts/
-- https://ofekshilon.github.io/optview2-opencv/video/
-- https://ofekshilon.github.io/optview2-opencv/videoio/
+- [https://ofekshilon.github.io/optview2-opencv/calib3d/](https://ofekshilon.github.io/optview2-opencv/calib3d/)
+- [https://ofekshilon.github.io/optview2-opencv/core/](https://ofekshilon.github.io/optview2-opencv/core/)
+- [https://ofekshilon.github.io/optview2-opencv/dnn/](https://ofekshilon.github.io/optview2-opencv/dnn/)
+- [https://ofekshilon.github.io/optview2-opencv/features2d/](https://ofekshilon.github.io/optview2-opencv/features2d/)
+- [https://ofekshilon.github.io/optview2-opencv/flann/](https://ofekshilon.github.io/optview2-opencv/flann/)
+- [https://ofekshilon.github.io/optview2-opencv/gapi/](https://ofekshilon.github.io/optview2-opencv/gapi/)
+- [https://ofekshilon.github.io/optview2-opencv/highgui/](https://ofekshilon.github.io/optview2-opencv/highgui/)
+- [https://ofekshilon.github.io/optview2-opencv/imgcodecs/](https://ofekshilon.github.io/optview2-opencv/imgcodecs/)
+- [https://ofekshilon.github.io/optview2-opencv/imgproc/](https://ofekshilon.github.io/optview2-opencv/imgproc/)
+- [https://ofekshilon.github.io/optview2-opencv/ml/](https://ofekshilon.github.io/optview2-opencv/ml/)
+- [https://ofekshilon.github.io/optview2-opencv/objdetect/](https://ofekshilon.github.io/optview2-opencv/objdetect/)
+- [https://ofekshilon.github.io/optview2-opencv/photo/](https://ofekshilon.github.io/optview2-opencv/photo/)
+- [https://ofekshilon.github.io/optview2-opencv/stitching/](https://ofekshilon.github.io/optview2-opencv/stitching/)
+- [https://ofekshilon.github.io/optview2-opencv/ts/](https://ofekshilon.github.io/optview2-opencv/ts/)
+- [https://ofekshilon.github.io/optview2-opencv/video/](https://ofekshilon.github.io/optview2-opencv/video/)
+- [https://ofekshilon.github.io/optview2-opencv/videoio/](https://ofekshilon.github.io/optview2-opencv/videoio/)
